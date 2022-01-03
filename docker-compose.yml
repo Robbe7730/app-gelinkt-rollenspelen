@@ -62,7 +62,7 @@ services:
     restart: unless-stopped
     logging: *default-logging
   sentence:
-    image: robbe7730/sentence-service
+    image: robbe7730/sentence-service:1.0.0
     environment:
       LOG_LEVEL: "INFO"
       SENTENCE_URI_BASE: "https://gelinkt-rollenspelen.robbevanherck.be/sentence/"
