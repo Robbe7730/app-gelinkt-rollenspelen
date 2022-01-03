@@ -1,7 +1,46 @@
 {
   "version": "0.1",
   "prefixes": {
+    "iol": "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   },
   "resources": {
+    "text": {
+      "name": "text",
+      "class": "iol:Text",
+      "attributes": {
+        "value": {
+          "type": "string",
+          "predicate": "rdf:value"
+        }
+      },
+      "relationships": {
+        "sentence": {
+          "predicate": "iol:hasComponent",
+          "target": "sentence",
+          "cardinality": "many"
+        }
+      },
+      "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/text/"
+    },
+    "sentence": {
+      "name": "sentence",
+      "class": "iol:Sentence",
+      "attributes": {
+        "value": {
+          "type": "string",
+          "predicate": "rdf:value"
+        }
+      },
+      "relationships": {
+        "text": {
+          "predicate": "iol:hasComponent",
+          "target": "text",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/sentence/"
+    }
   }
 }
