@@ -19,12 +19,12 @@ defmodule Dispatcher do
   # Run `docker-compose restart dispatcher` after updating
   # this file.
 
-  match "/sentence/*path", @json do
-    Proxy.forward conn, path, "http://resource/sentence/"
+  match "/sentences/*path", @json do
+    Proxy.forward conn, path, "http://resource/sentences/"
   end
 
-  match "/text/*path", @json do
-    Proxy.forward conn, path, "http://resource/text/"
+  match "/texts/*path", @json do
+    Proxy.forward conn, path, "http://resource/texts/"
   end
 
   match "/*_", %{ last_call: true } do

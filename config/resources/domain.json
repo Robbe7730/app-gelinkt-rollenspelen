@@ -7,6 +7,7 @@
   "resources": {
     "text": {
       "name": "text",
+      "path": "texts",
       "class": "iol:Text",
       "attributes": {
         "value": {
@@ -25,6 +26,7 @@
     },
     "sentence": {
       "name": "sentence",
+      "path": "sentences",
       "class": "iol:Sentence",
       "attributes": {
         "value": {
