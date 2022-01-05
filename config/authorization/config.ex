@@ -23,7 +23,9 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#Sentence",
-                        "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#Text"
+                        "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#Text",
+                        "http://purl.org/olia/olia.owl#Sentence",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
                       ]
                     } } ] },
 

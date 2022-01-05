@@ -78,3 +78,22 @@ services:
       - "logging=true"
     restart: unless-stopped
     logging: *default-logging
+  constituency_tree:
+    image: robbe7730/constituency-tree-service:1.0.0
+    environment:
+      LOG_LEVEL: "INFO"
+      NODE_URI_BASE: "https://gelinkt-rollenspelen.robbevanherck.be/constituency-node/"
+      CORENLP_URL: "http://corenlp:9000"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public"
+    links:
+      - corenlp:corenlp
+    labels:
+      - "logging=true"
+    restart: unless-stopped
+    logging: *default-logging
+  corenlp:
+    image: nlpbox/corenlp
+    labels:
+      - "logging=true"
+    restart: unless-stopped
+    logging: *default-logging

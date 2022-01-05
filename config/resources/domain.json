@@ -2,7 +2,8 @@
   "version": "0.1",
   "prefixes": {
     "iol": "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
   },
   "resources": {
     "text": {
@@ -43,6 +44,42 @@
         }
       },
       "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/sentence/"
+    },
+    "constituency-node": {
+      "name": "constituency-node",
+      "path": "constituency-nodes",
+      "class": "nif:String",
+      "attributes": {
+        "is-string": {
+          "type": "string",
+          "predicate": "nif:isString"
+        },
+        "pos-tag": {
+          "type": "uri",
+          "predicate": "nif:posTag"
+        },
+        "begin-index": {
+          "type": "number",
+          "predicate": "nif:beginIndex"
+        },
+        "end-index": {
+          "type": "number",
+          "predicate": "nif:endIndex"
+        }
+      },
+      "relationships": {
+        "sub-string": {
+          "predicate": "nif:subString",
+          "target": "constituency-node",
+          "cardinality": "many"
+        },
+        "super-string": {
+          "predicate": "nif:superString",
+          "target": "constituency-node",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/constituency-node/"
     }
   }
 }

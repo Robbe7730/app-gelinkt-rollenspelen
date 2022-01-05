@@ -27,6 +27,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/texts/"
   end
 
+  match "/constituency-nodes/*path", @json do
+    Proxy.forward conn, path, "http://resource/constituency-nodes/"
+  end
+
   match "/*_", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
