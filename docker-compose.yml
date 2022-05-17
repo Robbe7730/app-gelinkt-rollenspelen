@@ -97,3 +97,9 @@ services:
       - "logging=true"
     restart: unless-stopped
     logging: *default-logging
+  solid-sync:
+    image: robbe7730/solid-sync-service
+    labels:
+      - "logging=true"
+    restart: unless-stopped
+    logging: *default-logging
