@@ -3,7 +3,9 @@
   "prefixes": {
     "iol": "http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
+    "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
+    "ttrpg": "https://w3id.org/TTRpg#",
+    "foaf": "http://xmlns.com/foaf/0.1/"
   },
   "resources": {
     "text": {
@@ -80,6 +82,44 @@
         }
       },
       "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/constituency-node/"
+    },
+    "character": {
+      "name": "character",
+      "path": "characters",
+      "class": "ttrpg:Character",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "foaf:name"
+        }
+      },
+      "relationships": {
+        "campaign": {
+          "predicate": "ttrpg:inCampaign",
+          "target": "campaign",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/character/"
+    },
+    "campaign": {
+      "name": "campaign",
+      "path": "campaigns",
+      "class": "ttrpg:Campaign",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "foaf:name"
+        }
+      },
+      "relationships": {
+        "characters": {
+          "predicate": "ttrpg:hasCharacter",
+          "target": "character",
+          "cardinality": "many"
+        }
+      },
+      "new-resource-base": "https://gelinkt-rollenspelen.robbevanherck.be/campaign/"
     }
   }
 }
