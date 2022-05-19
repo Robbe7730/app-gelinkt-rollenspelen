@@ -5,7 +5,8 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
     "ttrpg": "https://w3id.org/TTRpg#",
-    "foaf": "http://xmlns.com/foaf/0.1/"
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "itsrdf": "http://www.w3.org/2005/11/its/rdf#"
   },
   "resources": {
     "text": {
@@ -78,6 +79,11 @@
         "super-string": {
           "predicate": "nif:superString",
           "target": "constituency-node",
+          "cardinality": "one"
+        },
+        "references-character": {
+          "predicate": "itsrdf:taIdentRef",
+          "target": "character",
           "cardinality": "one"
         }
       },

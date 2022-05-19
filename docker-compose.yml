@@ -103,3 +103,9 @@ services:
       - "logging=true"
     restart: unless-stopped
     logging: *default-logging
+  named-entity-recognition:
+    image: robbe7730/named-entity-recognition-service
+    labels:
+      - "logging=true"
+    restart: unless-stopped
+    logging: *default-logging
